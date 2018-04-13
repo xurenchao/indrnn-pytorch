@@ -60,8 +60,8 @@ class IndRNNCell(nn.Module):
         self.hidden_size = hidden_size
         self.bias = bias
         self.nonlinearity = nonlinearity
-        self.weight_ih = Parameter(torch.Tensor(hidden_size, input_size))
-        self.weight_hh = Parameter(torch.Tensor(hidden_size))
+        self.weight_ih = Parameter(torch.Tensor(hidden_size, input_size)) # matrix W
+        self.weight_hh = Parameter(torch.Tensor(hidden_size)) # vector u
         if bias:
             self.bias_ih = Parameter(torch.Tensor(hidden_size))
         else:
